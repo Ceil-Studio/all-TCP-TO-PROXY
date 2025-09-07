@@ -1,4 +1,7 @@
 
+sysctl -w net.ipv4.ip_forward=1
+
+
 sudo iptables -t nat -N REDSOCKS 2>/dev/null
 
 # Nettoyer les anciennes règles
