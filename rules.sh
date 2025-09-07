@@ -1,3 +1,6 @@
+
+sudo iptables -t nat -N REDSOCKS 2>/dev/null
+
 # Nettoyer les anciennes règles
 sudo iptables -t nat -F REDSOCKS
 sudo iptables -t nat -F OUTPUT
