@@ -17,6 +17,8 @@ redsocks {
  type = socks4;
 }
 
+appliquer les regles iptables (voir rules.sh)
+
 -installer gost 
 pre requis snapd
 
