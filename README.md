@@ -17,10 +17,13 @@ redsocks {
  type = socks4;
 }
 
-appliquer les regles iptables (voir rules.sh)
+
 
 -installer gost 
 pre requis snapd
+
+appliquer les regles iptables (voir rules.sh)
+
 
 ici on utilise le port 9050 pour gost (voir config resocks)
 lancer dans un screen la commande 
