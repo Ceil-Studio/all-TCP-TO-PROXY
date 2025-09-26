@@ -68,24 +68,14 @@ read -p "PORT de ton proxy SOCKS5 (ex: 12324) : " PROXY_PORT
 read -p "Identifiant de ton proxy SOCKS5 : " PROXY_ID
 read -p "mdp de ton proxy SOCKS5  : " PROXY_PSW
 
-echo '#!/bin/bash
-
-# Nom de la session screen
-SESSION="gost"
-
-# Vérifier si la session existe
-if screen -list | grep -q "\.${SESSION}[[:space:]]"; then
-    echo "⚠  La session screen '$SESSION' existe déjà. Suppression..."
-    screen -S "$SESSION" -X quit
-    sleep 1
-fi
+echo "#!/bin/bash
 
 # Lancer une nouvelle session
-echo "🚀 Démarrage du proxy dans une nouvelle session screen '$SESSION'..."
-screen -S "$SESSION" gost -L=:9050 -F=socks5://"$PROXY_ID":"$PROXY_PSW"@"$PROXY_IP":"$PROXY_PORT"
+echo '🚀 Démarrage du proxy dans une nouvelle session screen gost...'
+screen -S gost gost -L=:9050 -F=socks5://"$PROXY_ID":"$PROXY_PSW"@"$PROXY_IP":"$PROXY_PORT"
 
 echo "✅ Proxy lancé avec succès !"
-' > proxy.sh
+" > proxy.sh
 
 chmod +x proxy.sh
 
@@ -114,7 +104,7 @@ netfilter-persistent save
 
 echo "Configuration iptables appliquée avec succès !"
 
-echo 'base {
+echo "base {
         log_debug = on;
         log_info = on;
         log = "stderr";
@@ -129,7 +119,7 @@ redsocks {
          port = 9050;     
          type = socks5;
 }
-' > /etc/redsocks.conf
+" > /etc/redsocks.conf
 
 
 systemctl enable redsocks 
