@@ -15,7 +15,7 @@ apt update
 
 # --- 2. Installer les dépendances système ---
 echo "🔧 Installation des dépendances système..."
-apt install xdotool sudo libx11-dev curl screen redsocks snapd ipset iptables netfilter-persistent ipset-persistent iptables-persistent wget python3-pip python3 htop -y
+apt install xdotool fuse libfuse2 sudo libx11-dev curl screen redsocks snapd ipset iptables netfilter-persistent ipset-persistent iptables-persistent wget python3-pip python3 htop -y
 
 echo "📚 Installation des dépendances Python..."
 pip install requests --break-system-packages
