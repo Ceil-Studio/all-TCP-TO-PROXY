@@ -11,11 +11,11 @@ echo "🚀 Début de l'installation..."
 
 # --- 1. Mettre à jour le système ---
 echo "📦 Mise à jour des paquets..."
-sudo apt update
+apt update
 
 # --- 2. Installer les dépendances système ---
 echo "🔧 Installation des dépendances système..."
-apt install xdotool libx11-dev curl screen redsocks snapd ipset iptables netfilter-persistent ipset-persistent iptables-persistent wget python3-pip python3 htop -y
+apt install xdotool sudo libx11-dev curl screen redsocks snapd ipset iptables netfilter-persistent ipset-persistent iptables-persistent wget python3-pip python3 htop -y
 
 echo "📚 Installation des dépendances Python..."
 pip install requests --break-system-packages
@@ -124,6 +124,10 @@ redsocks {
 
 systemctl enable redsocks 
 systemctl start redsocks
+
+sleep 5
+
+systemctl restart redsocks
 
 
 
