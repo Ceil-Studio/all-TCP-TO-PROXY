@@ -20,6 +20,7 @@ apt install xdotool fuse libfuse2 sudo libx11-dev curl screen redsocks snapd ips
 echo "📚 Installation des dépendances Python..."
 pip install requests --break-system-packages
 pip install python3-xlib --break-system-packages
+pip install pynput --break-system-packages
 
 echo "Installation de gost"
 
